@@ -11,21 +11,20 @@ import portugol.lexer.LexerException;
 import portugol.node.EOF;
 
 public class test_lexer {
-
-	public static void main(String[] args) throws LexerException, IOException {
-		File f = new File("E:\\Documentos\\Projeto Lft\\Gramatica\\src\\portugol\\test\\Test_Lexer.txt");
-		New_Lexer l = new New_Lexer(new PushbackReader(new FileReader(f)));
-		String lexer = "";
+    public static void main(String[] args) throws LexerException, IOException {
+        File f = new File("/home/fabio/Desktop/UFS/2014.1/LFT/Compilador/GRAMATICA/src/portugol/test/Test_Lexer.txt");
+        New_Lexer l = new New_Lexer(new PushbackReader(new FileReader(f)));
+        String lexer = "";
         int linha = 0;
-        while (!(l.peek() instanceof EOF))
-        {            
-            if (l.peek().getLine() > linha)
-            {
+        while (!(l.peek() instanceof EOF)) {
+            if (l.peek().getLine() > linha) {
                 linha = l.peek().getLine();
                 lexer = lexer + System.lineSeparator();
             }
-            lexer = lexer +"\n("+ l.peek().getText() + ")-> " + l.next().getClass().getSimpleName();
+            lexer = lexer + "\n(" + l.peek().getText() + ")-> " + l.next().getClass().getSimpleName();
         }
-        System.out.println(lexer);       
+
+        System.out.println(lexer);
     }
+    
 }

@@ -5,14 +5,14 @@ package portugol.node;
 import portugol.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TComentInicio extends Token
+public final class TComentAninhado extends Token
 {
-    public TComentInicio()
+    public TComentAninhado()
     {
         super.setText("/*");
     }
 
-    public TComentInicio(int line, int pos)
+    public TComentAninhado(int line, int pos)
     {
         super.setText("/*");
         setLine(line);
@@ -22,18 +22,19 @@ public final class TComentInicio extends Token
     @Override
     public Object clone()
     {
-      return new TComentInicio(getLine(), getPos());
+      return new TComentAninhado(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTComentInicio(this);
+        ((Analysis) sw).caseTComentAninhado(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TComentInicio text.");
+        //throw new RuntimeException("Cannot change TComentAninhado text.");
+        super.setText(text);
     }
 }

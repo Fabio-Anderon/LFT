@@ -1,23 +1,20 @@
-// comentario em linha;
-/*testando comentario em bloco 
-/*aninhado*/*/
+programa Example;
+var 
+variavel_num = 10;
+variavel_char = 'a';
+variavel_real = 3.14;
+Begin
+//Comeco do meu programa
+/*1-Inicio ler/*2-Inicio/+ //  2-Fim*/ /*3-Inicio const 3-Fim*/ /*4-Inicio Ola 4-Fim*/ program 1-Fim*/ 
+enquanto(variavel_real < variavel_num) faca
+inicio
+escreva(variavel_real);
+variavel_real++;
+fim
 
 
-programa testando;
 
-var a ; 
-real numero_real = 0.0;
-inteiro numero_inteiro = 0;
-char texto = 'testando' "texto",
-enquanto { } fim enquanto;
-repita
-ate
-de
-para
-fim para
-escolha
-caso 1
-fim escolha; 
-:=
-<-
-fim.
+
+
+fim
+

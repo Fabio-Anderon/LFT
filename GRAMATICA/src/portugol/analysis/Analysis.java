@@ -76,7 +76,7 @@ public interface Analysis extends Switch
     void caseTNumReal(TNumReal node);
     void caseTEspaco(TEspaco node);
     void caseTComentLinha(TComentLinha node);
-    void caseTComentInicio(TComentInicio node);
+    void caseTComentAninhado(TComentAninhado node);
     void caseTComentEscopo(TComentEscopo node);
     void caseTComentEstrela(TComentEstrela node);
     void caseTComentBarra(TComentBarra node);

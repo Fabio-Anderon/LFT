@@ -459,7 +459,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTComentInicio(TComentInicio node)
+    public void caseTComentAninhado(TComentAninhado node)
     {
         defaultCase(node);
     }
