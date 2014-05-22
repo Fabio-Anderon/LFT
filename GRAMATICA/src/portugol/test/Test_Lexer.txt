@@ -1,0 +1,23 @@
+// comentario em linha;
+/*testando comentario em bloco 
+/*aninhado*/*/
+
+
+programa testando;
+
+var a ; 
+real numero_real = 0.0;
+inteiro numero_inteiro = 0;
+char texto = 'testando' "texto",
+enquanto { } fim enquanto;
+repita
+ate
+de
+para
+fim para
+escolha
+caso 1
+fim escolha; 
+:=
+<-
+fim.
