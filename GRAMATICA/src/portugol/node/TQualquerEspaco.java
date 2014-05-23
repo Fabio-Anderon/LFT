@@ -5,14 +5,14 @@ package portugol.node;
 import portugol.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TNumReal extends Token
+public final class TQualquerEspaco extends Token
 {
-    public TNumReal(String text)
+    public TQualquerEspaco(String text)
     {
         setText(text);
     }
 
-    public TNumReal(String text, int line, int pos)
+    public TQualquerEspaco(String text, int line, int pos)
     {
         setText(text);
         setLine(line);
@@ -22,12 +22,12 @@ public final class TNumReal extends Token
     @Override
     public Object clone()
     {
-      return new TNumReal(getText(), getLine(), getPos());
+      return new TQualquerEspaco(getText(), getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTNumReal(this);
+        ((Analysis) sw).caseTQualquerEspaco(this);
     }
 }

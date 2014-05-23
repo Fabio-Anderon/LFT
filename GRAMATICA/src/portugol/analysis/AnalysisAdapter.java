@@ -69,6 +69,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTQualquerEspaco(TQualquerEspaco node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseTPrograma(TPrograma node)
     {
         defaultCase(node);
@@ -442,12 +448,6 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTNumReal(TNumReal node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTEspaco(TEspaco node)
     {
         defaultCase(node);
     }

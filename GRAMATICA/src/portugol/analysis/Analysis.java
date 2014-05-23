@@ -11,6 +11,7 @@ public interface Analysis extends Switch
     Object getOut(Node node);
     void setOut(Node node, Object o);
 
+    void caseTQualquerEspaco(TQualquerEspaco node);
     void caseTPrograma(TPrograma node);
     void caseTConst(TConst node);
     void caseTVar(TVar node);
@@ -74,7 +75,6 @@ public interface Analysis extends Switch
     void caseTIdentificador(TIdentificador node);
     void caseTNumInt(TNumInt node);
     void caseTNumReal(TNumReal node);
-    void caseTEspaco(TEspaco node);
     void caseTComentLinha(TComentLinha node);
     void caseTComentAninhado(TComentAninhado node);
     void caseTComentEscopo(TComentEscopo node);

@@ -9,12 +9,7 @@ Begin
 enquanto(variavel_real < variavel_num) faca
 inicio
 escreva(variavel_real);
-variavel_real++;
-fim
-
-
-
-
-
-fim
-
+variavel_real++;        
+09Testantoerro
+fim 
+fim 

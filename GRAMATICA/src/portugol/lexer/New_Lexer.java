@@ -34,7 +34,7 @@ public class New_Lexer extends Lexer {
                     token = null;
                 } else {
                     //Final de um aninhamento
-                    System.out.print(text.toString());
+                   
                     comment.setText(text.toString());
                     token = comment;
                     state = State.NORMAL;

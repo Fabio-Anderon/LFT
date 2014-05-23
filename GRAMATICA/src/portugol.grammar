@@ -30,6 +30,9 @@ States
       normal, comentario;
 
 Tokens
+      //qualquer_espaco
+      {normal} qualquer_espaco = (branco | tab | eol)+ ;
+      
       //palavras reservadas               
     
       {normal} programa = 'programa' ;             
@@ -73,7 +76,7 @@ Tokens
       {normal} fim_escolha = 'fim'branco'escolha' ;
       //---------------------------------
       {normal} inicio = 'inicio' ;
-      {normal} fim = 'fim' ;
+      {normal} fim = 'fim.' ;  // O fim tem um ponto no final: 'fim.' <=> 'end;' em pascal
 
       //simbolos aritmeticos
       {normal} mais = '+' ;
@@ -122,9 +125,6 @@ Tokens
       {normal} num_int = digitos+;
       {normal} num_real = digitos+'.'digitos+;
 
-      //espaco
-      {normal} espaco = (branco | tab | eol)* ;
-
       //Comentarios
       {normal} coment_linha = '//' [all_char - [lf + cr]]*;
       //comentario Aninhado
@@ -134,9 +134,6 @@ Tokens
       {comentario} coment_barra = '/';
       {comentario} coment_fim = '*/';
        
-      
-      
-      
 
 Ignored Tokens
-      espaco, coment_linha, coment_aninhado, coment_escopo, coment_estrela, coment_barra, coment_fim;
+      qualquer_espaco, coment_linha, coment_aninhado, coment_escopo, coment_estrela, coment_barra, coment_fim;
