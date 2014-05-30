@@ -1,5 +1,6 @@
 package portugol.lexer;
 
+
 import portugol.node.*;
 
 public class New_Lexer extends Lexer {
