@@ -5,14 +5,14 @@ package portugol.node;
 import portugol.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TComentLinha extends Token
+public final class TAllEspaco extends Token
 {
-    public TComentLinha(String text)
+    public TAllEspaco(String text)
     {
         setText(text);
     }
 
-    public TComentLinha(String text, int line, int pos)
+    public TAllEspaco(String text, int line, int pos)
     {
         setText(text);
         setLine(line);
@@ -22,12 +22,12 @@ public final class TComentLinha extends Token
     @Override
     public Object clone()
     {
-      return new TComentLinha(getText(), getLine(), getPos());
+      return new TAllEspaco(getText(), getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTComentLinha(this);
+        ((Analysis) sw).caseTAllEspaco(this);
     }
 }

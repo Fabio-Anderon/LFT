@@ -1,6 +1,5 @@
 /*Autor: Anderson Nunes
       Fabio Nascimento
-TANDERSOM COMMIT
 */
 
 Package portugol;
@@ -22,7 +21,7 @@ Helpers
             tab = 9;    //horizontal tab
             cr = 13;    //carriage return
             lf = 10;    //line feed
-            eol = cr lf| cr | lf;         //pra qualquer plataforma
+            eol = cr lf| cr | lf ;         
             branco = ' ';
             //aspas = 34 | 39;
 
@@ -31,36 +30,39 @@ States
       normal, comentario;
 
 Tokens
-      //qualquer_espaco
-      {normal} qualquer_espaco = (branco | tab | eol)+ ;
-      
       //palavras reservadas               
     
       {normal} programa = 'programa' ;             
+      {normal} inicio = 'inicio' ;
+      {normal} fim = 'fim.' ;
       {normal} const = 'const';
       {normal} var = 'var' ;                             
       {normal} escreva = 'escreva' ;
-      {normal} ler = 'ler' ;
+      {normal} leia = 'leia' ;
       {normal} inteiro = 'inteiro' ;
       {normal} real = 'real' ;
-      {normal} char = 'char' ;
+      {normal} caractere = 'caractere' ;
       {normal} div = 'div' ;     //divisao inteira
       // {normal} boolean = 'boolean' ;
-
+      //--------------------------------------------
       //if then
       {normal} se = 'se' ;
       {normal} entao = 'entao';
       {normal} fim_se = 'fim'branco'se' ;
-      {normal} senao = 'senao';
-      {normal} fim_senao = 'fim'branco'senao' ;
+      //case 
+      {normal} avalie = 'avalie';
+      {normal} caso = 'caso'; 
+      //{normal} padrao = 'padrao';
+      {normal} fim_avalie = 'fim'branco'avalie' ;
+ 
+      {normal} senao = 'senao'; //if e avalie
+      {normal} faca = 'faca'; // enquanto e para
+      {normal} ate = 'ate';  // repita e para
 
-      {normal} faca = 'faca'; // enquanto e do para
-      {normal} ate = 'ate';  // para e repita
-
-      //while do | do while
+      //while
       {normal} enquanto = 'enquanto';
       {normal} fim_enquanto = 'fim'branco'enquanto' ;
-      // -------------------------------
+ 
       {normal} repita = 'repita' ;
       //for
       {normal} para = 'para'; 
@@ -70,15 +72,6 @@ Tokens
       {normal} continue = 'continue';
       {normal} fim_para = 'fim'branco'para' ;
       //--------------------------------
-      //case 
-      {normal} escolha = 'escolha';
-      {normal} caso = 'caso'; 
-      {normal} padrao = 'padrao';
-      {normal} fim_escolha = 'fim'branco'escolha' ;
-      //---------------------------------
-      {normal} inicio = 'inicio' ;
-      {normal} fim = 'fim.' ;  // O fim tem um ponto no final: 'fim.' <=> 'end;' em pascal
-
       //simbolos aritmeticos
       {normal} mais = '+' ;
       {normal} menos = '-' ;
@@ -88,20 +81,19 @@ Tokens
       {normal} decremento = '--' ;
       {normal} atribuicao = '<-' ;
 
-
       //simbolos separadores
       {normal} virgula = ',' ;
       {normal} dois_pts = ':' ;
       {normal} pt_virg = ';' ;
-      {normal} pt = '.' ;
+      //{normal} pt = '.' ;
       {normal} abre_parantes = '(' ;
       {normal} fecha_parentes = ')' ;
-      {normal} abre_chave = '{';
-      {normal} fecha_chave = '}';
+      //{normal} abre_chave = '{';
+      //{normal} fecha_chave = '}';
       {normal} abre_colchete = '[' ;
       {normal} fecha_colchete = ']' ;
       {normal} aspas_sp = 39 ;
-      {normal} aspas_dp = 34 ;
+      //{normal} aspas_dp = 34 ;
 
       //simbolos booleanos
       {normal} xor = 'xor' ;
@@ -126,6 +118,9 @@ Tokens
       {normal} num_int = digitos+;
       {normal} num_real = digitos+'.'digitos+;
 
+      //all_espaco
+      {normal} all_espaco = (branco | tab | eol )+ ;
+
       //Comentarios
       {normal} coment_linha = '//' [all_char - [lf + cr]]*;
       //comentario Aninhado
@@ -134,7 +129,7 @@ Tokens
       {comentario} coment_estrela = '*';
       {comentario} coment_barra = '/';
       {comentario} coment_fim = '*/';
-       
+        
 
 Ignored Tokens
-      qualquer_espaco, coment_linha, coment_aninhado, coment_escopo, coment_estrela, coment_barra, coment_fim;
+      all_espaco, coment_linha, coment_aninhado, coment_escopo, coment_estrela, coment_barra, coment_fim;

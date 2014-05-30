@@ -5,16 +5,16 @@ package portugol.node;
 import portugol.analysis.*;
 
 @SuppressWarnings("nls")
-public final class TMenorIgual extends Token
+public final class TCaractere extends Token
 {
-    public TMenorIgual()
+    public TCaractere()
     {
-        super.setText("<=");
+        super.setText("caractere");
     }
 
-    public TMenorIgual(int line, int pos)
+    public TCaractere(int line, int pos)
     {
-        super.setText("<=");
+        super.setText("caractere");
         setLine(line);
         setPos(pos);
     }
@@ -22,18 +22,18 @@ public final class TMenorIgual extends Token
     @Override
     public Object clone()
     {
-      return new TMenorIgual(getLine(), getPos());
+      return new TCaractere(getLine(), getPos());
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseTMenorIgual(this);
+        ((Analysis) sw).caseTCaractere(this);
     }
 
     @Override
     public void setText(@SuppressWarnings("unused") String text)
     {
-        throw new RuntimeException("Cannot change TMenorIgual text.");
+        throw new RuntimeException("Cannot change TCaractere text.");
     }
 }

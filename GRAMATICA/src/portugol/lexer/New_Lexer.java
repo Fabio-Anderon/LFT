@@ -1,6 +1,5 @@
 package portugol.lexer;
 
-
 import portugol.node.*;
 
 public class New_Lexer extends Lexer {
@@ -29,13 +28,12 @@ public class New_Lexer extends Lexer {
                     count--;
                 }
                 if (token instanceof EOF) {
-                    throw new LexerException(null, "token coment�rio desbalanceado");
+                    throw new LexerException(null, "token comentario desbalanceado");
                 }
                 if (count != 0) {
                     token = null;
                 } else {
                     //Final de um aninhamento
-                   
                     comment.setText(text.toString());
                     token = comment;
                     state = State.NORMAL;
